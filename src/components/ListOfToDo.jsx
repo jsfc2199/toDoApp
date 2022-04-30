@@ -13,7 +13,7 @@ const ListOfToDo = () => {
     const { state, dispatch } = useContext(Store) //ahora podemos acceder a la informacion de StoreProveder
     //desde listOfTodo
 
-    console.log(state); //si impromimos el estado podemos ver que si podemos acceder a las notas y la lista
+    //console.log(state); //si impromimos el estado podemos ver que si podemos acceder a las notas y la lista
 
     return (
         <div>

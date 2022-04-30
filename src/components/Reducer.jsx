@@ -18,7 +18,24 @@ function reducer(state, action) {
          * de acuerdo a ese escenario
          */
         case 'add-note':
-            return state
+            console.log('adding note') //para verificar que el boton funciona cuando es apra añadir nota
+            //modificamos la funcion para pasarle una nota añadida
+            const newNote = {
+                id : Math.floor(Math.random()*10000), //id aleatorio
+                message: action.payload.message, //usamos el payload del formulario
+                title: action.payload.title, //usamos el payload del formulario
+                done: false
+            }
+
+            //creamos una lista que tenga las notas de antes y le añadimos la nueva
+            const newListOfNotesAddedOne = [...state.listOfNotes, newNote] 
+
+            //esto lo que termina siendo es el estado que reemplazará el estado que teniamos antes, es decir
+            //el estado que teniamos por defecto
+            const newStateAddNote = {
+                ...state, listOfNotes: newListOfNotesAddedOne
+            }
+            return newStateAddNote
         case 'remove-note':
         return state
         case 'update-note':
