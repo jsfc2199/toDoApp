@@ -1,4 +1,4 @@
-//ES UNA FUNCION QUE NOS PERMITE MANJAR EL ESTADO GLOBAL BASADO EN CIERTO ESCENARIOS
+//ES UNA FUNCION QUE NOS PERMITE MANJEAR EL ESTADO GLOBAL BASADO EN CIERTO ESCENARIOS
 /**
  * Recibe dos parametros esta funcion, el primero es el estado global la cual se recibe automaticamente
  * porque será pasado por el StoreProvider, es decir que recibirá el estado por defecto

@@ -1,11 +1,14 @@
 import './App.css'
+import StoreProvider from './components/StoreProvider'
+import ListOfToDo from './components/ListOfToDo'
 
 function App() {
 
   return (
-    <div className="App">
-      <h2>hello</h2>
-    </div>
+    <StoreProvider>
+        <h1>Hola</h1>
+        <ListOfToDo />
+    </StoreProvider>
   )
 }
 
