@@ -18,7 +18,7 @@ function reducer(state, action) {
          * de acuerdo a ese escenario
          */
         case 'add-note':
-            console.log('adding note') //para verificar que el boton funciona cuando es apra añadir nota
+            //console.log('adding note') //para verificar que el boton funciona cuando es apra añadir nota
             //modificamos la funcion para pasarle una nota añadida
             const newNote = {
                 id : Math.floor(Math.random()*10000), //id aleatorio
