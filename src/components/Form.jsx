@@ -18,6 +18,7 @@ const Form = () => {
                     title,
                     message
                 }
+                
             })
             formRef.current.reset() //indicamos nuevamente la referencia para que al dar click se limpien
             //los campos

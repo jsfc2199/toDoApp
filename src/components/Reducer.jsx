@@ -9,7 +9,7 @@
 function reducer(state, action) {
     /**
      * Funciona bajo escenarios, por lo que los identificamos con un switch
-     * donde estaremos identificando el tipo de escenario (accion)     * 
+     * donde estaremos identificando el tipo de escenario (accion)
      */
     
     switch(action.type){
@@ -37,9 +37,35 @@ function reducer(state, action) {
             }
             return newStateAddNote
         case 'remove-note':
-        return state
+            /**
+             * faltraremos nuevamente la lista por aquellas que el id sea diferente del que queremos eliminar
+             */
+             const newlistOfNotesWithOutPayloadNote = 
+             state.listOfNotes.filter(note => note.id !== action.payload.id)
+
+             const newStateWithoutNoteDeleted = {...state, listOfNotes: newlistOfNotesWithOutPayloadNote}
+        return newStateWithoutNoteDeleted
         case 'update-note':
-            return state
+            
+            /**
+             * creamos una lista de las notas que no tenga el check activado y viceversa, entonces filtramos
+             * las notas que tiene diferente id al de la nota que estamos enviando en el payload
+             */
+            const newlistOfNotes = state.listOfNotes.filter(note => note.id !== action.payload.id)
+
+            /**
+             * ahora creamos una lista con las notas anteriores filtrada y le añadimos la nota del payload
+             */
+            const newListOfNotesWithModification = [...newlistOfNotes, action.payload] 
+
+            /**
+             * modificamos la lista de lo que teniamos con lo nuevo que tendremos
+             */
+            const newStateModifiedCheckBox = {
+                ...state,listOfNotes: newListOfNotesWithModification
+            }
+
+            return newStateModifiedCheckBox
     }
 
     //todos los estados se retornan luego de que los hayamos manipulado basados en el escenario y la 
